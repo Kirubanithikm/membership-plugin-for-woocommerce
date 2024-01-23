@@ -1,0 +1,23 @@
+{
+    "name": "kirubanithi/membership-plugin-for-woocommerce",
+    "description": "It helps to create a membership for WooCommerce",
+    "version": "1.0.0",
+    "type": "wordpress-plugin",
+    "minimum-stability": "stable",
+    "license": "GPL-3.0-or-later",
+    "autoload": {
+      "psr-4": {
+        "MPW\\": "",
+        "MPW\\App\\": "app/"
+      }
+    },
+    "authors": [
+        {
+            "name": "Kirubanithikm",
+            "email": "kirubanithikm@gmail.com"
+        }
+    ],
+  "require": {
+    "yahnis-elsts/plugin-update-checker": "^v5.0"
+  }
+}
