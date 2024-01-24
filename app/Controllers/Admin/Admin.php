@@ -8,7 +8,7 @@ defined('ABSPATH') or exit;
 
 class Admin
 {
-    private static $helper;
+    private static $helper, $menu_slug = 'membership_menu';
 
     public function __construct()
     {
@@ -24,7 +24,7 @@ class Admin
         add_menu_page('Membership menu',
             'Membership menu',
             'manage_options',
-            'Membership menu',
+            self::$menu_slug,
             array($this, 'membershipSettings')
         );
     }
@@ -59,6 +59,17 @@ class Admin
             ];
         }
         self::$helper->view('Admin/MembershipMenuSettings', $data);
+    }
+
+    /**
+     * Load the admin asset file
+     * @return void
+     */
+    function loadAdminSettingsAssets()
+    {
+        if(isset($_GET['page']) && $_GET['page'] == self::$menu_slug) {
+            wp_enqueue_style('mpw-admin-style', trailingslashit(MPW_PLUGIN_URL) . 'assets/css/admin-menu.css', array(), MPW_VERSION);
+        }
     }
 
     /**

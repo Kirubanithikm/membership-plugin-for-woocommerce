@@ -104,4 +104,15 @@ class ProductPage
             }
         }
     }
+
+    /**
+     * Load the banner asset file
+     * @return void
+     */
+    function loadProductPageAssets()
+    {
+        if(is_product()) {
+            wp_enqueue_style('mpw-banner-style', trailingslashit(MPW_PLUGIN_URL) . 'assets/css/banner.css', array(), MPW_VERSION);
+        }
+    }
 }

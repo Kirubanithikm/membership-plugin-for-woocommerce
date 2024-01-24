@@ -18,6 +18,13 @@
 defined('ABSPATH') or exit;
 
 /**
+ * Current version of our app
+ */
+if (!defined('MPW_VERSION')) {
+    define('MPW_VERSION', '1.0.0');
+}
+
+/**
  * The plugin file
  */
 if (!defined('MPW_PLUGIN_FILE')) {
@@ -36,6 +43,13 @@ if (!defined('MPW_PLUGIN_PATH')) {
  */
 if (!defined('MPW_PLUGIN_BASENAME')) {
     define('MPW_PLUGIN_BASENAME', plugin_basename(MPW_PLUGIN_FILE));
+}
+
+/**
+ * The plugin directory URL
+ */
+if (!defined('MPW_PLUGIN_URL')) {
+    define('MPW_PLUGIN_URL', plugin_dir_url(MPW_PLUGIN_FILE));
 }
 
 /**
