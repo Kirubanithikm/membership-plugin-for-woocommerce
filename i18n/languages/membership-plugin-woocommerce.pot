@@ -1,5 +1,5 @@
 # Copyright (C) 2024 Kirubanithi G
-# This file is distributed under the same license as the Membership Plugin for WooCommerce plugin.
+# This file is distributed under the GPL v3 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: Membership Plugin for WooCommerce 1.0.0\n"
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-24T00:15:47+05:30\n"
+"POT-Creation-Date: 2024-01-24T10:23:08+05:30\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: membership-plugin-woocommerce\n"
@@ -30,58 +30,50 @@ msgstr ""
 msgid "Kirubanithi G"
 msgstr ""
 
-#: app/Controllers/Admin/Admin.php:72
+#: app/Controllers/Admin/Admin.php:83
 msgid "Settings"
 msgstr ""
 
-#: app/Views/Admin/MembershipMenuSettings.php:45
-#: app/Views/Admin/MembershipMenuSettings.php:61
+#: app/Controllers/Admin/Compatibility.php:73
+msgid "Membership Plugin for WooCommerce can not be activated because it requires minimum PHP version of"
+msgstr ""
+
+#: app/Controllers/Admin/Compatibility.php:76
+msgid "Woocommerce must installed and activated in-order to use Membership Plugin for WooCommerce!"
+msgstr ""
+
+#: app/Controllers/Admin/Compatibility.php:79
+msgid "Membership Plugin for WooCommerce requires at least Woocommerce"
+msgstr ""
+
+#: app/Controllers/Admin/Compatibility.php:82
+msgid "Membership Plugin for WooCommerce at least WordPress"
+msgstr ""
+
+#: app/Views/Admin/MembershipMenuSettings.php:5
+#: app/Views/Admin/MembershipMenuSettings.php:21
 msgid "Product ID:"
 msgstr ""
 
-#: app/Views/Admin/MembershipMenuSettings.php:48
-#: app/Views/Admin/MembershipMenuSettings.php:62
+#: app/Views/Admin/MembershipMenuSettings.php:8
+#: app/Views/Admin/MembershipMenuSettings.php:22
 msgid "Discount price:"
 msgstr ""
 
-#: app/Views/Admin/MembershipMenuSettings.php:51
-#: app/Views/Admin/MembershipMenuSettings.php:63
+#: app/Views/Admin/MembershipMenuSettings.php:11
+#: app/Views/Admin/MembershipMenuSettings.php:23
 msgid "Expiry in Years:"
 msgstr ""
 
-#: app/Views/Admin/MembershipMenuSettings.php:54
-#: app/Views/Admin/MembershipMenuSettings.php:64
+#: app/Views/Admin/MembershipMenuSettings.php:14
+#: app/Views/Admin/MembershipMenuSettings.php:24
 msgid "Maximum Product Limit:"
 msgstr ""
 
-#: app/Views/Admin/MembershipMenuSettings.php:57
+#: app/Views/Admin/MembershipMenuSettings.php:17
 msgid "Submit"
 msgstr ""
 
-#: app/Views/Admin/MembershipMenuSettings.php:66
+#: app/Views/Admin/MembershipMenuSettings.php:26
 msgid "No Data!"
-msgstr ""
-
-#: app/Views/Frontend/GuestUser.php:16
-msgid "We suggest logging in to check your membership. Then you can get exciting offers."
-msgstr ""
-
-#: app/Views/Frontend/GuestUser.php:17
-msgid "Click here to Login"
-msgstr ""
-
-#: app/Views/Frontend/MembershipBanner.php:16
-msgid "Congratulations! Your membership price is"
-msgstr ""
-
-#: app/Views/Frontend/MembershipBanner.php:17
-msgid "You saved"
-msgstr ""
-
-#: app/Views/Frontend/NoneMembershipBanner.php:16
-msgid "Oops! If you don't have a membership, we suggest you buy one. Then you can get exciting offers."
-msgstr ""
-
-#: app/Views/Frontend/NoneMembershipBanner.php:17
-msgid "Click here to buy Membership"
 msgstr ""
