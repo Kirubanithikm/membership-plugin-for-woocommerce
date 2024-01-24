@@ -1,0 +1,37 @@
+.mpw-settings-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #888888;
+}
+
+.mpw-settings-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.mpw-settings-inputs {
+    width: 100%;
+    padding: 8px !important;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.mpw-submit-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mpw-settings-values {
+    font-weight: bold;
+    text-align: center;
+    color: #4caf50;
+    font-size: 1.2em;
+}
