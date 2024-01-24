@@ -16,6 +16,7 @@ class Helper
      */
     public function checkUserMembership($user_id, $membership_product_id, $expiry_years, $max_product_limit)
     {
+        $check_user_membership = false;
         $user_orders = wc_get_orders(array(
             'customer' => $user_id,
             'status'   => 'completed',
@@ -28,13 +29,13 @@ class Helper
                     $get_expiry_years = strtotime('-'. $expiry_years.' year');
                     if(strtotime($order->get_date_created()->date('Y-m-d H:i:s')) > $get_expiry_years) {
                         if($this->checkPurchaseCount($user_id, $max_product_limit, $membership_product_id)){
-                            return true;
+                            $check_user_membership = true;
                         }
                     }
                 }
             }
         }
-        return false;
+        return apply_filters('mpw_check_user_membership', $check_user_membership, $membership_product_id, $expiry_years);
     }
 
     /**
@@ -46,6 +47,7 @@ class Helper
      */
     function checkPurchaseCount($user_id, $max_product_limit, $membership_product_id)
     {
+        $check_purchase_count = true;
         if (is_user_logged_in()) {
             $products_purchased_after = 0;
             $customer_orders = wc_get_orders(array(
@@ -63,10 +65,10 @@ class Helper
                 }
             }
             if ($products_purchased_after >= $max_product_limit) {
-                return false;
+                $check_purchase_count =  false;
             }
         }
-        return true;
+        return apply_filters('mpw_check_purchase_count', $check_purchase_count, $user_id, $max_product_limit);
     }
 
     /**

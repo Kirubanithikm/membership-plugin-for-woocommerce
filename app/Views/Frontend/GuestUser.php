@@ -1,6 +1,6 @@
 <?php defined('ABSPATH') or exit ?>
 
-<?php if (!isset($login_permalink)) exit; ?>
+<?php if (!isset($login_permalink) || !isset($banner_message) || !isset($guest_user_login_message)) exit; ?>
 
 <style>
     .product-banner {
@@ -13,6 +13,6 @@
 </style>
 
 <div class="product-banner">
-    <p><?php esc_html_e('We suggest logging in to check your membership. Then you can get exciting offers.', 'membership-plugin-woocommerce'); ?></p>
-    <a href="<?php echo esc_url($login_permalink); ?>"><?php esc_html_e('Click here to Login', 'membership-plugin-woocommerce'); ?></a>
+    <p><?php esc_html_e($banner_message, 'membership-plugin-woocommerce'); ?></p>
+    <a href="<?php echo esc_url($login_permalink); ?>"><?php esc_html_e($guest_user_login_message, 'membership-plugin-woocommerce'); ?></a>
 </div>

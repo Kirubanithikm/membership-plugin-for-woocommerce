@@ -1,16 +1,18 @@
 <?php
 
 /**
- * Plugin Name:       Membership Plugin for WooCommerce
- * Plugin URI:        https://github.com/Kirubanithikm/membership-plugin-for-woocommerce
- * Description:       It helps to create a membership for WooCommerce.
- * Version:           1.0.0
- * Author:            Kirubanithi G
- * Text Domain:       membership-plugin-woocommerce
- * Slug:              membership-plugin-woocommerce
- * Domain Path:       /i18n/languages
- * Requires at least: 5.3
+ * Plugin Name:          Membership Plugin for WooCommerce
+ * Plugin URI:           https://github.com/Kirubanithikm/membership-plugin-for-woocommerce
+ * Description:          It helps to create a membership for WooCommerce.
+ * Version:              1.0.0
+ * Author:               Kirubanithi G
+ * Text Domain:          membership-plugin-woocommerce
+ * Slug:                 membership-plugin-woocommerce
+ * Domain Path:          /i18n/languages
+ * Requires at least:    5.3
  * WC requires at least: 5.0
+ * License:              GPL v3 or later
+ * License URI:          https://www.gnu.org/licenses/gpl-3.0.html
  */
 
 defined('ABSPATH') or exit;
@@ -37,6 +39,27 @@ if (!defined('MPW_PLUGIN_BASENAME')) {
 }
 
 /**
+ * Required PHP Version
+ */
+if (!defined('MPW_PHP_REQUIRED_VERSION')) {
+    define('MPW_PHP_REQUIRED_VERSION', 5.6);
+}
+
+/**
+ * Required WooCommerce Version
+ */
+if (!defined('MPW_WC_REQUIRED_VERSION')) {
+    define('MPW_WC_REQUIRED_VERSION', '5.0');
+}
+
+/**
+ * Required WordPress Version
+ */
+if (!defined('MPW_WP_REQUIRED_VERSION')) {
+    define('MPW_WP_REQUIRED_VERSION', '5.3');
+}
+
+/**
  * Remote repository url
  */
 if (!defined('MPW_REMOTE_REPO')) {
@@ -58,6 +81,18 @@ if (!file_exists(MPW_PLUGIN_PATH . '/vendor/autoload.php')) {
 } else {
     require MPW_PLUGIN_PATH . '/vendor/autoload.php';
 }
+
+/**
+ * Check compatibilities
+ */
+register_activation_hook(MPW_PLUGIN_FILE, function() {
+    if (class_exists('MPW\App\Controllers\Admin\Compatibility')) {
+        $Compatibility = new \MPW\App\Controllers\Admin\Compatibility();
+        $Compatibility->CheckCompatibilities();
+    } else {
+        wp_die(__('Membership Plugin for WooCommerce is unable to find the Compatibility class.'));
+    }
+});
 
 /**
  * Call the Route class

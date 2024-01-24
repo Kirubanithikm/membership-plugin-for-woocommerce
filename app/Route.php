@@ -21,8 +21,10 @@ class Route
         self::$product_page = empty(self::$product_page) ? new ProductPage() : self::$product_page;
 
         //Admin
-        add_action('admin_menu', array(self::$admin, 'membershipMenu'));
-        add_filter('plugin_action_links_' . MPW_PLUGIN_BASENAME, array(self::$admin, 'mpwSettingsLink'));
+        if(is_admin()) {
+            add_action('admin_menu', array(self::$admin, 'membershipMenu'));
+            add_filter('plugin_action_links_' . MPW_PLUGIN_BASENAME, array(self::$admin, 'mpwSettingsLink'));
+        }
 
         //Frontend
         add_action('woocommerce_before_add_to_cart_form', array(self::$product_page, 'membershipBanner'), 10);
